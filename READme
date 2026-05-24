@@ -1,0 +1,6 @@
+// Architectural pattern: MVC, Dependency Injection, MVP
+//MVC = model view controller
+//Design pattern: Middleware, Decorator
+
+
+// CLUSTER => Database => Collection => Document

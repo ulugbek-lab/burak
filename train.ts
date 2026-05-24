@@ -1,9 +1,9 @@
 //MIT TASK L
 
-function reversevalue(values) {
+function reversevalue(values: string) {
   return values
     .split(" ")
-    .map((word) => {
+    .map((word: string) => {
       return word.split("").reverse().join("");
     })
     .join(" ");
