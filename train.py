@@ -1,10 +1,24 @@
-def reverse_value(value):
-    words = value.split(" ")
+# MIT TASK M
+def get_square(values):
     result = []
-    for word in words:
-        result.append(word[::-1])
+    for value in values:
+        result.append({
+            "number": value,
+            "square": value ** 2 
+        })
+    return result
 
-    return " ".join(result)
+
+print(get_square([1, 2, 4]))
 
 
-print(reverse_value("we like coding"))
+# def reverse_value(value):
+#     words = value.split(" ")
+#     result = []
+#     for word in words:
+#         result.append(word[::-1])
+
+#     return " ".join(result)
+
+
+# print(reverse_value("we like coding"))
