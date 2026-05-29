@@ -4,3 +4,24 @@
 
 
 // CLUSTER => Database => Collection => Document
+
+
+
+//DESIGN 
+
+//1. app.ts -> express 
+//2. server.ts -> mongoose connection
+//3. 
+
+
+/* Project Standards:
+- logging standards 
+- naming stardards 
+   functions, methods, variables => Camel     
+   class => PASCAL                       
+   folder => KEBAB
+   css => SNAKE 
+
+
+ -ERROR handling  
+*/ 
