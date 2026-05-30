@@ -1,15 +1,21 @@
+# MIT TASK N
+def palindrom_check(value):
+    return value == value[::-1]
+print(palindrom_check("dad"))
+
+
 # MIT TASK M
-def get_square(values):
-    result = []
-    for value in values:
-        result.append({
-            "number": value,
-            "square": value ** 2 
-        })
-    return result
+# def get_square(values):
+#     result = []
+#     for value in values:
+#         result.append({
+#             "number": value,
+#             "square": value ** 2
+#         })
+#     return result
 
 
-print(get_square([1, 2, 4]))
+# print(get_square([1, 2, 4]))
 
 
 # def reverse_value(value):
