@@ -6,14 +6,6 @@
 // CLUSTER => Database => Collection => Document
 
 
-
-//DESIGN 
-
-//1. app.ts -> express 
-//2. server.ts -> mongoose connection
-//3. 
-
-
 /* Project Standards:
 - logging standards 
 - naming stardards 
@@ -24,4 +16,10 @@
 
 
  -ERROR handling  
+*/ 
+
+/*
+(traditional)APi
+RestApi
+GraphQL APi 
 */ 
