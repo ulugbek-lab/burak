@@ -1,7 +1,21 @@
+# MIT TASK O
+def calculate(values):
+    total = 0
+
+    for value in values:
+        if isinstance(value, (int, float)):
+            total += value
+
+    return total
+
+
+print(calculate([10, "10", {"son": 10}, "True", 35]))
+
+
 # MIT TASK N
-def palindrom_check(value):
-    return value == value[::-1]
-print(palindrom_check("dad"))
+# def palindrom_check(value):
+#     return value == value[::-1]
+# print(palindrom_check("dad"))
 
 
 # MIT TASK M

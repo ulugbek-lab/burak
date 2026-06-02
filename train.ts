@@ -1,8 +1,20 @@
-//MIT TASK N
-function palindrom(value: string): boolean {
-  return value.split("").join("") === value.split("").reverse().join("");
+//MIT TASK O
+function calculate(values: any) {
+  let sum: any = 0;
+  for (let value of values) {
+    if (typeof value === "number") {
+      sum += value;
+    }
+  }
+  return sum;
 }
-console.log(palindrom("dad"));
+console.log(calculate([10, "10", { son: 10 }, true, 35]));
+
+//MIT TASK N
+// function palindrom(value: string): boolean {
+//   return value.split("").join("") === value.split("").reverse().join("");
+// }
+// console.log(palindrom("dad"));
 
 //MIT TASK M
 // function getSquareNumbers(values: number[]) {
