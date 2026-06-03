@@ -69,3 +69,38 @@ console.log(objectToArray({ a: 10, b: 20 }));
 //     .join(" ");
 // }
 // console.log(reversevalue("we like coding"));
+
+
+ // Architectural pattern: MVC, Dependency Injection, MVP
+ //MVC = model view controller
+//Design pattern: Middleware, Decorator
+
+
+ // CLUSTER => Database => Collection => Document
+
+
+/* Project Standards:
+ - logging standards 
+ - naming stardards 
+    functions, methods, variables => Camel     
+   class => PASCAL                       
+    folder => KEBAB
+    css => SNAKE 
+
+
+#  -ERROR handling  
+# */ 
+
+ /*
+# (traditional)APi
+# RestApi
+# GraphQL APi 
+# */ 
+
+
+/*
+ Traditional Frontend Development => BSSR (Admin) => EJS
+
+ Modern frontend Development   =>  SPA(User) => REACT 
+
+*/
