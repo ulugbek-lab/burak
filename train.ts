@@ -1,3 +1,39 @@
+//MIT TASK Q
+
+
+
+
+// function hasProperty(values: any, keys: string): any {
+//   for (const key in values) {
+//     if (key === keys) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+// console.log(hasProperty({ age: "BMW", year: "BMW" }, "name"));
+
+
+
+
+
+// function hasProperty(values: any, keys: string): any {
+//   return keys in values
+// }
+// console.log(hasProperty({ age: "BMW", name: "BMW" }, "name"));
+
+
+
+
+
+
+function hasProperty(values: any, keys: string): boolean {
+  return values.hasOwnProperty(keys)
+}
+console.log(hasProperty({ age: "BMW", year: "BMW" }, "name"));
+
+
+
 //MIT TASK P
 //1)// function objectToArray(keys: any) {
 //   let nest = [];
@@ -9,14 +45,11 @@
 // console.log(objectToArray({ a: 10, b: 20 }));
 
 //2)
-function objectToArray(keys: any) {
-  return Object.entries(keys);
-}
+// function objectToArray(keys: any) {
+//   return Object.entries(keys);
+// }
 
-console.log(objectToArray({ a: 10, b: 20 }));
-
-
-
+// console.log(objectToArray({ a: 10, b: 20 }));
 
 //MIT TASK O
 // function calculate(values: any) {
@@ -70,14 +103,11 @@ console.log(objectToArray({ a: 10, b: 20 }));
 // }
 // console.log(reversevalue("we like coding"));
 
-
- // Architectural pattern: MVC, Dependency Injection, MVP
- //MVC = model view controller
+// Architectural pattern: MVC, Dependency Injection, MVP
+//MVC = model view controller
 //Design pattern: Middleware, Decorator
 
-
- // CLUSTER => Database => Collection => Document
-
+// CLUSTER => Database => Collection => Document
 
 /* Project Standards:
  - logging standards 
@@ -89,14 +119,13 @@ console.log(objectToArray({ a: 10, b: 20 }));
 
 
 #  -ERROR handling  
-# */ 
+# */
 
- /*
+/*
 # (traditional)APi
 # RestApi
 # GraphQL APi 
-# */ 
-
+# */
 
 /*
  Traditional Frontend Development => BSSR (Admin) => EJS

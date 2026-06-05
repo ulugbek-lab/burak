@@ -1,17 +1,35 @@
+# MIT TASK Q
+# def has_property(values, keys):
+#     return keys in values
+
+
+# print(has_property({"age": "BMW", "name": "BMW"}, "name"))
+
+def has_property(values, keys):
+    for cuurent_key in values:
+        if cuurent_key == keys:
+            return True
+
+    return False
+
+
+print(has_property({"age": "BMW", "name": "BMW"}, "name"))
+
+
 # MIT TASK P
 # def object_to_array(keys):
 #     return list(keys.items())
 
 # print(object_to_array({"a": 10, "b": 20}))
-def object_to_array(values):
-    result = []
-    for key in values:
-        result.append([key, values[key]])
+# def object_to_array(values):
+#     result = []
+#     for key in values:
+#         result.append([key, values[key]])
 
-    return result
+#     return result
 
 
-print(object_to_array({"a": 10, "b": 20}))
+# print(object_to_array({"a": 10, "b": 20}))
 
 
 # MIT TASK O
@@ -58,4 +76,3 @@ print(object_to_array({"a": 10, "b": 20}))
 
 
 # print(reverse_value("we like coding"))
-
