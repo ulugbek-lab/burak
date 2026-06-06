@@ -26,8 +26,6 @@ memberController.signup = async (req: Request, res: Response) => {
 
 memberController.login = async (req: Request, res: Response) => {
   try {
-    console.log("process login");
-    console.log(req.body);
     const input: LoginInput = req.body,
       result = await memberService.login(input);
     //TODO TOKENS
