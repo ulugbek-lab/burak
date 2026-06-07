@@ -1,7 +1,18 @@
+// <MIT TASK R
+// function calculate(values: any): any {
+//   return eval(values)
+
+// }
+// console.log(calculate("6 + 4"));
+
+function calculate(values: any): any {
+  const [a, b, c] = values.split(" ");
+  if (b === "+") {
+    return Number(a) + Number(c);
+  }
+}
+console.log(calculate("6 + 4"));
 //MIT TASK Q
-
-
-
 
 // function hasProperty(values: any, keys: string): any {
 //   for (const key in values) {
@@ -13,26 +24,15 @@
 // }
 // console.log(hasProperty({ age: "BMW", year: "BMW" }, "name"));
 
-
-
-
-
 // function hasProperty(values: any, keys: string): any {
 //   return keys in values
 // }
 // console.log(hasProperty({ age: "BMW", name: "BMW" }, "name"));
 
-
-
-
-
-
-function hasProperty(values: any, keys: string): boolean {
-  return values.hasOwnProperty(keys)
-}
-console.log(hasProperty({ age: "BMW", year: "BMW" }, "name"));
-
-
+// function hasProperty(values: any, keys: string): boolean {
+//   return values.hasOwnProperty(keys);
+// }
+// console.log(hasProperty({ age: "BMW", year: "BMW" }, "name"));
 
 //MIT TASK P
 //1)// function objectToArray(keys: any) {
@@ -133,7 +133,6 @@ console.log(hasProperty({ age: "BMW", year: "BMW" }, "name"));
  Modern frontend Development   =>  SPA(User) => REACT 
 
 */
-
 
 /**COOKIES
  * 

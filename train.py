@@ -1,3 +1,19 @@
+# MIT TASK R
+# def calculate(values):
+#     return eval(values)
+
+# print(calculate("3 + 4"))
+
+
+def calculate(values):
+    a, b, c = values.split()
+    if b == "+":
+        return int(a) + int(c)
+
+
+print(calculate("3 + 4"))
+
+
 # MIT TASK Q
 # def has_property(values, keys):
 #     return keys in values
@@ -5,15 +21,15 @@
 
 # print(has_property({"age": "BMW", "name": "BMW"}, "name"))
 
-def has_property(values, keys):
-    for cuurent_key in values:
-        if cuurent_key == keys:
-            return True
+# def has_property(values, keys):
+#     for cuurent_key in values:
+#         if cuurent_key == keys:
+#             return True
 
-    return False
+#     return False
 
 
-print(has_property({"age": "BMW", "name": "BMW"}, "name"))
+# print(has_property({"age": "BMW", "name": "BMW"}, "name"))
 
 
 # MIT TASK P
