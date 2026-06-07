@@ -52,7 +52,7 @@ restaurantController.processSignup = async (
       res.send(result);
     });
 
-    res.send(result);
+    // res.send(result);
   } catch (err) {
     console.log("ERROR, getSignup:", err);
     const message =
