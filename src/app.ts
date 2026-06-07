@@ -9,12 +9,16 @@ import { MORGAN_FORMAT } from "./libs/config";
 //Sessions
 import session from "express-session";
 import ConnectMongoDB from "connect-mongodb-session";
+import { T } from "./libs/types/common";
 
 const MongoDBStore = ConnectMongoDB(session);
 const store = new MongoDBStore({
   uri: String(process.env.MONGO_URL),
   collection: "sessions",
 });
+
+
+
 
 /** 1-Entrance  */
 const app = express();
@@ -36,6 +40,15 @@ app.use(
     saveUninitialized: true,
   }),
 );
+app.use(function (req, res, next) {
+  const sessionInstance = req.session as T;
+  res.locals.member = sessionInstance.member;
+  next()
+});
+
+
+
+
 
 /** 3- Views */
 app.set("views", path.join(__dirname, "views"));
