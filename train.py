@@ -1,3 +1,13 @@
+# MIT TASK S
+def missing_number(values):
+    for i in range(len(values) + 1):
+        if i not in values:
+            return i
+
+
+print(missing_number([3, 0, 1]))
+
+
 # MIT TASK R
 # def calculate(values):
 #     return eval(values)
@@ -5,13 +15,13 @@
 # print(calculate("3 + 4"))
 
 
-def calculate(values):
-    a, b, c = values.split()
-    if b == "+":
-        return int(a) + int(c)
+# def calculate(values):
+#     a, b, c = values.split()
+#     if b == "+":
+#         return int(a) + int(c)
 
 
-print(calculate("3 + 4"))
+# print(calculate("3 + 4"))
 
 
 # MIT TASK Q

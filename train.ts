@@ -1,3 +1,14 @@
+//MIT TASK S
+function missingNumber(values: any) {
+  for (let i = 0; i <= values.length; i++) {
+    if (!values.includes(i)) {
+      return i;
+    }
+  }
+}
+
+console.log(missingNumber([3, 0, 1]));
+
 // <MIT TASK R
 // function calculate(values: any): any {
 //   return eval(values)
@@ -5,13 +16,13 @@
 // }
 // console.log(calculate("6 + 4"));
 
-function calculate(values: any): any {
-  const [a, b, c] = values.split(" ");
-  if (b === "+") {
-    return Number(a) + Number(c);
-  }
-}
-console.log(calculate("6 + 4"));
+// function calculate(values: any): any {
+//   const [a, b, c] = values.split(" ");
+//   if (b === "+") {
+//     return Number(a) + Number(c);
+//   }
+// }
+// console.log(calculate("6 + 4"));
 //MIT TASK Q
 
 // function hasProperty(values: any, keys: string): any {
