@@ -1,13 +1,13 @@
 //MIT TASK S
-function missingNumber(values: any) {
-  for (let i = 0; i <= values.length; i++) {
-    if (!values.includes(i)) {
-      return i;
-    }
-  }
-}
+// function missingNumber(values: any) {
+//   for (let i = 0; i <= values.length; i++) {
+//     if (!values.includes(i)) {
+//       return i;
+//     }
+//   }
+// }
 
-console.log(missingNumber([3, 0, 1]));
+// console.log(missingNumber([3, 0, 1]));
 
 // <MIT TASK R
 // function calculate(values: any): any {
@@ -145,9 +145,14 @@ console.log(missingNumber([3, 0, 1]));
 
 */
 
-/**COOKIES
- * 
+/**COOKIES 
  request join
  self destroy
+ */
 
+/** Validations:
+ FRONTEND 
+ BEACJEND
+ DATABASE 
+ 
  */
