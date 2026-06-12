@@ -11,6 +11,8 @@ import session from "express-session";
 import ConnectMongoDB from "connect-mongodb-session";
 import { T } from "./libs/types/common";
 
+
+//TCP 2.
 const MongoDBStore = ConnectMongoDB(session);
 const store = new MongoDBStore({
   uri: String(process.env.MONGO_URL),
@@ -29,6 +31,7 @@ app.use(morgan(MORGAN_FORMAT));
 
 /** 2- Sessions */
 
+
 app.use(
   session({
     secret: String(process.env.SESSION_SECRET),
@@ -45,9 +48,6 @@ app.use(function (req, res, next) {
   res.locals.member = sessionInstance.member;
   next()
 });
-
-
-
 
 
 /** 3- Views */
