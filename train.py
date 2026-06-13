@@ -1,11 +1,20 @@
+# MIT TASK T 
+def merge_sorted_arrays(a, b):
+    return sorted(a + b)
+
+print(merge_sorted_arrays([0, 3, 4], [4, 6, 2]))
+
+
+
+
 # MIT TASK S
-def missing_number(values):
-    for i in range(len(values) + 1):
-        if i not in values:
-            return i
+# def missing_number(values):
+#     for i in range(len(values) + 1):
+#         if i not in values:
+#             return i
 
 
-print(missing_number([3, 0, 1]))
+# print(missing_number([3, 0, 1]))
 
 
 # MIT TASK R

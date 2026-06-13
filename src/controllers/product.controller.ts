@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import Errors from "../libs/Errors";
+import Errors, { HttpCode, Message } from "../libs/Errors";
 import { T } from "../libs/types/common";
 import ProductService from "../models/Product.service";
 import { AdminRequest } from "../libs/types/member";
@@ -22,6 +22,13 @@ productController.getAllProducts = async (req: AdminRequest, res: Response) => {
 productController.createNewProducts = async (req: Request, res: Response) => {
   try {
     console.log("createNewProducts");
+    console.log(req.files);
+
+    if (!req.files?.length)
+      throw new Errors(HttpCode.INTERNAL_SERVER_ERROR, Message.CREATE_FAILED);
+
+     
+
     res.send("done ");
   } catch (err) {
     console.log("ERROR, createNewProducts:", err);
