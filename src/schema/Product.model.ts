@@ -48,11 +48,11 @@ const productSchema = new Schema(
     productDesc: {
       type: String,
     },
-    productImage: {
+    productImages: {
       type: [String],
       default: [],
     },
-    productView: {
+    productViews: {
       type: Number,
       default: 0,
     },

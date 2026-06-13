@@ -33,7 +33,7 @@ routerAdmin.post(
   "/product/create",
   restaurantController.verifyRestaurant,
   makeUploader("products").array("productImages"),
-  productController.createNewProducts,
+  productController.createNewProduct,
 );
 routerAdmin.post(
   "/product:id",

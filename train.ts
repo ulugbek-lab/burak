@@ -1,8 +1,8 @@
 //MIT TASK T
-function mergeSortedArray(a: number[], b: number[]) {
-    return a.concat(b).sort((a, b) => a - b)
-}
-console.log(mergeSortedArray([0, 3, 4], [4, 6, 2]));
+// function mergeSortedArray(a: number[], b: number[]) {
+//     return a.concat(b).sort((a, b) => a - b)
+// }
+// console.log(mergeSortedArray([0, 3, 4], [4, 6, 2]));
 
 //MIT TASK S
 // function missingNumber(values: any) {
