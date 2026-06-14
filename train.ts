@@ -1,3 +1,10 @@
+//MIT 
+
+
+
+
+
+
 //MIT TASK T
 // function mergeSortedArray(a: number[], b: number[]) {
 //     return a.concat(b).sort((a, b) => a - b)

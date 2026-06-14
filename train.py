@@ -1,8 +1,8 @@
 # MIT TASK T 
-def merge_sorted_arrays(a, b):
-    return sorted(a + b)
+# def merge_sorted_arrays(a, b):
+#     return sorted(a + b)
 
-print(merge_sorted_arrays([0, 3, 4], [4, 6, 2]))
+# print(merge_sorted_arrays([0, 3, 4], [4, 6, 2]))
 
 
 
