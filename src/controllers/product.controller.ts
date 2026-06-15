@@ -15,7 +15,7 @@ productController.getAllProducts = async (req: AdminRequest, res: Response) => {
     const data = await productService.getAllProducts();
     console.log(data);
 
-    res.render("products", {products: data});
+    res.render("products", { products: data });
   } catch (err) {
     console.log("ERROR, getAllProducts:", err);
     if (err instanceof Errors) res.status(err.code).json(err);
@@ -37,7 +37,6 @@ productController.createNewProduct = async (
     data.productImages = req.files?.map((ele) => {
       return ele.path;
     });
-    // console.log(data)
 
     await productService.createNewProduct(data);
 

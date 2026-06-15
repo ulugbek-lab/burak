@@ -16,12 +16,16 @@ class ProductService {
 
   /**SPA */
 
+  //getAllProducts
+
   public async getAllProducts(): Promise<Product[]> {
     const result = await this.productModel.find().exec();
     if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
 
     return result;
   }
+
+  //createNewProducts
 
   public async createNewProduct(input: ProductInput): Promise<Product> {
     try {
@@ -31,12 +35,16 @@ class ProductService {
       throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
     }
   }
+  //UpdateChosenProducts
+
   public async updateChosenProduct(
     id: string | string[],
     input: ProductUpdateInput,
   ): Promise<Product> {
     // string => objectId
+    console.log("before", id);
     id = shapeIntoMongooseObjectId(id);
+    console.log("after", id);
     const result = await this.productModel
       .findOneAndUpdate({ _id: id }, input, { new: true })
       .exec();
