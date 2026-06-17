@@ -19,6 +19,8 @@ class MemberService {
   }
 
   /**SPA */
+
+  //signup----
   public async signup(input: MemberInput): Promise<Member> {
     const salt = await bcrypt.genSalt();
     input.memberPassword = await bcrypt.hash(input.memberPassword, salt);
@@ -33,12 +35,13 @@ class MemberService {
     }
   }
 
+  //login----
   public async login(input: LoginInput): Promise<Member> {
     // TODO Consider member status later
     const member = await this.memberModel
       .findOne(
-        { memberNick: input.memberNick },
-        { memberNick: 1, memberPassword: 1 },
+        { memberNick: input.memberNick }, //filter
+        { memberNick: 1, memberPassword: 1 }, //projection
       )
       .exec();
     if (!member) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
@@ -55,6 +58,8 @@ class MemberService {
   }
 
   /** SSR */
+
+  //proccessSignup----
   public async processSignup(input: MemberInput): Promise<Member> {
     const exist = await this.memberModel
       .findOne({ memberType: MemberType.RESTAURANT })
@@ -74,11 +79,12 @@ class MemberService {
     }
   }
 
+  // proccessLogin----
   public async processLogin(input: LoginInput): Promise<Member> {
     const member = await this.memberModel
       .findOne(
-        { memberNick: input.memberNick },
-        { memberNick: 1, memberPassword: 1 },
+        { memberNick: input.memberNick }, //filter
+        { memberNick: 1, memberPassword: 1 }, //projection
       )
       .exec();
     if (!member) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
@@ -94,6 +100,7 @@ class MemberService {
     return await this.memberModel.findById(member._id).exec();
   }
 
+  // getUser----
   public async getUsers(): Promise<Member[]> {
     const result = await this.memberModel
       .find({
@@ -103,10 +110,12 @@ class MemberService {
     if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
     return result;
   }
+
+  //updateChosenUser----
   public async updateChosenUser(input: MemberUpdateInput): Promise<Member> {
-    const memberId = shapeIntoMongooseObjectId(input._id);
+    input._id = shapeIntoMongooseObjectId(input._id);
     const result = await this.memberModel
-      .findByIdAndUpdate({ _id: memberId }, input, { new: true })
+      .findByIdAndUpdate({ _id: input._id }, input, { new: true })
       .exec();
     if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
     return result;
@@ -115,4 +124,5 @@ class MemberService {
 
 export default MemberService;
 
-//!Use Promise when it is ASYNC Function
+//!!!  Use Promise when it is ASYNC Function
+//!!! Files can not be uploaded to rest api

@@ -8,6 +8,8 @@ import Errors, { HttpCode, Message } from "../libs/Errors";
 const memberService = new MemberService();
 
 const restaurantController: T = {};
+
+//goHome
 restaurantController.goHome = (req: Request, res: Response) => {
   try {
     res.render("home");
@@ -17,6 +19,8 @@ restaurantController.goHome = (req: Request, res: Response) => {
     res.redirect("/admin");
   }
 };
+
+//getSignup
 restaurantController.getSignup = (req: Request, res: Response) => {
   try {
     res.render("Signup");
@@ -25,6 +29,8 @@ restaurantController.getSignup = (req: Request, res: Response) => {
     res.redirect("/admin");
   }
 };
+
+//getLogin
 restaurantController.getLogin = (req: Request, res: Response) => {
   try {
     res.render("login");
@@ -34,6 +40,7 @@ restaurantController.getLogin = (req: Request, res: Response) => {
   }
 };
 
+//processSignup
 restaurantController.processSignup = async (
   req: AdminRequest,
   res: Response,
@@ -55,8 +62,6 @@ restaurantController.processSignup = async (
     req.session.save(function () {
       res.redirect("/admin/product/all");
     });
-
-    // res.send(result);
   } catch (err) {
     console.log("ERROR, getSignup:", err);
     const message =
@@ -66,6 +71,7 @@ restaurantController.processSignup = async (
     );
   }
 };
+//processLogin
 restaurantController.processLogin = async (
   req: AdminRequest,
   res: Response,
@@ -91,7 +97,7 @@ restaurantController.processLogin = async (
     );
   }
 };
-
+//logout
 restaurantController.logout = async (req: AdminRequest, res: Response) => {
   try {
     console.log("logout");
@@ -103,6 +109,7 @@ restaurantController.logout = async (req: AdminRequest, res: Response) => {
     res.redirect("/admin");
   }
 };
+//getUsers
 restaurantController.getUsers = async (req: Request, res: Response) => {
   try {
     console.log("getUsers");
@@ -114,6 +121,7 @@ restaurantController.getUsers = async (req: Request, res: Response) => {
     res.redirect("/admin/login");
   }
 };
+//updateChosenUser
 restaurantController.updateChosenUser = async (req: Request, res: Response) => {
   try {
     console.log("updateChosenUser");
@@ -126,18 +134,20 @@ restaurantController.updateChosenUser = async (req: Request, res: Response) => {
   }
 };
 
-restaurantController.checkAuth = async (req: AdminRequest, res: Response) => {
-  try {
-    console.log("checkAuth login");
-    if (req.session?.member)
-      res.send(`<script> alert("${req.session.member.memberNick}")</script> `);
-    else res.send(`<script> alert("${Message.NOT_AUTHENTICATED}")</script>`);
-  } catch (err) {
-    console.log("ERROR, checkAuth:", err);
-    res.send(err);
-  }
-};
+//checkAuth
+// restaurantController.checkAuth = async (req: AdminRequest, res: Response) => {
+//   try {
+//     console.log("checkAuth login");
+//     if (req.session?.member)
+//       res.send(`<script> alert("${req.session.member.memberNick}")</script> `);
+//     else res.send(`<script> alert("${Message.NOT_AUTHENTICATED}")</script>`);
+//   } catch (err) {
+//     console.log("ERROR, checkAuth:", err);
+//     res.send(err);
+//   }
+// };
 
+//verifyRestaurant
 restaurantController.verifyRestaurant = (
   req: AdminRequest,
   res: Response,
