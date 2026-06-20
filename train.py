@@ -1,3 +1,21 @@
+# MIT TASK V 
+def count_char(value):
+    count = {}
+
+    for char in value:
+        if char in count:
+            count[char]+=1
+        else:
+            count[char] = 1
+
+    return count 
+print(count_char("hello")) 
+
+
+
+
+
+
 # MIT TASK T 
 # def merge_sorted_arrays(a, b):
 #     return sorted(a + b)

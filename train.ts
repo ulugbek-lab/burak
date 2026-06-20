@@ -1,9 +1,17 @@
-//MIT 
+//MIT TASK V
+function countChars(values: any) {
+  const count: any  = {}
+  for(const index of values){
+    if(count[index]){
+        count[index]++
+    }else{
+        count[index] = 1
+    }
+  }
+  return count 
+}
 
-
-
-
-
+console.log(countChars("hello"));
 
 //MIT TASK T
 // function mergeSortedArray(a: number[], b: number[]) {
