@@ -154,7 +154,7 @@ console.log(countChars("hello"));
 # */
 
 /*
-# (traditional)APi
+# (traditional)APi (form POST )
 # RestApi
 # GraphQL APi 
 # */
