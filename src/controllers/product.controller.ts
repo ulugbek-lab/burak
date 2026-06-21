@@ -9,11 +9,12 @@ const productService = new ProductService();
 
 const productController: T = {};
 
+//getAllProducts----
 productController.getAllProducts = async (req: AdminRequest, res: Response) => {
   try {
     console.log("getAllProducts");
     const data = await productService.getAllProducts();
-    console.log(data);
+    console.log("products", data);
 
     res.render("products", { products: data });
   } catch (err) {
@@ -23,6 +24,7 @@ productController.getAllProducts = async (req: AdminRequest, res: Response) => {
   }
 };
 
+//createNewProducts----
 productController.createNewProduct = async (
   req: AdminRequest,
   res: Response,
@@ -54,6 +56,7 @@ productController.createNewProduct = async (
   }
 };
 
+//updateChosenProduct
 productController.updateChosenProduct = async (req: Request, res: Response) => {
   try {
     console.log("updateChosenProducts");
