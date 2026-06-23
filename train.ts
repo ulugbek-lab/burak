@@ -1,17 +1,27 @@
-//MIT TASK V
-function countChars(values: any) {
-  const count: any  = {}
-  for(const index of values){
-    if(count[index]){
-        count[index]++
-    }else{
-        count[index] = 1
-    }
+//MIT TASK W
+function chunkArray(a: any, b: any) {
+  const add = [];
+  for (let i = 0; i < a.length; i += b) {
+    add.push(a.slice(i, i + b));
   }
-  return count 
+  return add;
 }
+console.log(chunkArray([1, 2, 3, 4, 5], 2));
 
-console.log(countChars("hello"));
+//MIT TASK V
+// function countChars(values: any) {
+//   const count: any  = {}
+//   for(const index of values){
+//     if(count[index]){
+//         count[index]++
+//     }else{
+//         count[index] = 1
+//     }
+//   }
+//   return count
+// }
+
+// console.log(countChars("hello"));
 
 //MIT TASK T
 // function mergeSortedArray(a: number[], b: number[]) {

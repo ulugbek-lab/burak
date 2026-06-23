@@ -1,28 +1,35 @@
-# MIT TASK V 
-def count_char(value):
-    count = {}
+# MIT TASK
+def chunk_array(arr, size):
+    result = []
 
-    for char in value:
-        if char in count:
-            count[char]+=1
-        else:
-            count[char] = 1
+    for i in range(0, len(arr), size):
+        result.append(arr[i:i + size])
 
-    return count 
-print(count_char("hello")) 
+    return result
 
 
+print(chunk_array([1, 2, 3, 4, 5], 2))
 
 
+# MIT TASK V
+# def count_char(value):
+#     count = {}
+
+#     for char in value:
+#         if char in count:
+#             count[char]+=1
+#         else:
+#             count[char] = 1
+
+#     return count
+# print(count_char("hello"))
 
 
-# MIT TASK T 
+# MIT TASK T
 # def merge_sorted_arrays(a, b):
 #     return sorted(a + b)
 
 # print(merge_sorted_arrays([0, 3, 4], [4, 6, 2]))
-
-
 
 
 # MIT TASK S
