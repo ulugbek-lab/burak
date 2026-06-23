@@ -7,7 +7,7 @@ import {
 } from "../libs/types/member";
 import MemberModel from "../schema/Member.model";
 import Errors from "../libs/Errors";
-import { MemberType } from "../libs/enums/member.enum";
+import { MemberStatus, MemberType } from "../libs/enums/member.enum";
 import * as bcrypt from "bcryptjs";
 import { shapeIntoMongooseObjectId } from "../libs/config";
 
@@ -40,11 +40,18 @@ class MemberService {
     // TODO Consider member status later
     const member = await this.memberModel
       .findOne(
-        { memberNick: input.memberNick }, //filter
-        { memberNick: 1, memberPassword: 1 }, //projection
+        {
+          memberNick: input.memberNick,
+          memberStatus: { $ne: MemberStatus.DELETE },
+        }, //filter
+        { memberNick: 1, memberPassword: 1, memberStatus: 1 }, //projection
       )
       .exec();
     if (!member) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
+    else if (member.memberStatus === MemberStatus.BLOCK) {
+      throw new Errors(HttpCode.FORBIDDEN, Message.BLOCKED_USER);
+    }
+    console.log(member);
 
     const isMatch = await bcrypt.compare(
       input.memberPassword,
