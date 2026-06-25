@@ -1,14 +1,28 @@
+# MIT TASK X
+def count_occurrences(obj, target):
+    count = 0
+
+    for key, value in obj.items():
+        if key == target:
+            count += 1
+
+        if isinstance(value, dict):
+            count += count_occurrences(value, target)
+
+    return count
+
+
 # MIT TASK
-def chunk_array(arr, size):
-    result = []
+# def chunk_array(arr, size):
+#     result = []
 
-    for i in range(0, len(arr), size):
-        result.append(arr[i:i + size])
+#     for i in range(0, len(arr), size):
+#         result.append(arr[i:i + size])
 
-    return result
+#     return result
 
 
-print(chunk_array([1, 2, 3, 4, 5], 2))
+# print(chunk_array([1, 2, 3, 4, 5], 2))
 
 
 # MIT TASK V

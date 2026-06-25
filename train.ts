@@ -1,12 +1,25 @@
-//MIT TASK W
-function chunkArray(a: any, b: any) {
-  const add = [];
-  for (let i = 0; i < a.length; i += b) {
-    add.push(a.slice(i, i + b));
+//MIT TASK X
+function countOccurences(obj: any, b: any) {
+  let count = 0;
+  for (const key in obj) {
+    if (key === "model") count++;
+    if (typeof obj[key] === "object" && obj[key] !== null) {
+      count += countOccurences(obj[key], b);
+    }
   }
-  return add;
+  return count;
 }
-console.log(chunkArray([1, 2, 3, 4, 5], 2));
+console.log(countOccurences({ model: "A", s: { model: "B" } }, "model"));
+
+//MIT TASK W
+// function chunkArray(a: any, b: any) {
+//   const add = [];
+//   for (let i = 0; i < a.length; i += b) {
+//     add.push(a.slice(i, i + b));
+//   }
+//   return add;
+// }
+// console.log(chunkArray([1, 2, 3, 4, 5], 2));
 
 //MIT TASK V
 // function countChars(values: any) {
