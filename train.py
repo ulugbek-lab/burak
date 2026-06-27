@@ -1,15 +1,23 @@
+# MIT TASK Y
+def find_intersection(a, b):
+    return [x for x in a if x in b]
+
+print(find_intersection([1, 2, 3], [3, 2, 0]))
+
+
+
 # MIT TASK X
-def count_occurrences(obj, target):
-    count = 0
+# def count_occurrences(obj, target):
+#     count = 0
 
-    for key, value in obj.items():
-        if key == target:
-            count += 1
+#     for key, value in obj.items():
+#         if key == target:
+#             count += 1
 
-        if isinstance(value, dict):
-            count += count_occurrences(value, target)
+#         if isinstance(value, dict):
+#             count += count_occurrences(value, target)
 
-    return count
+#     return count
 
 
 # MIT TASK

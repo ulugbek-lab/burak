@@ -1,15 +1,24 @@
-//MIT TASK X
-function countOccurences(obj: any, b: any) {
-  let count = 0;
-  for (const key in obj) {
-    if (key === "model") count++;
-    if (typeof obj[key] === "object" && obj[key] !== null) {
-      count += countOccurences(obj[key], b);
-    }
-  }
-  return count;
+//MIT TASK Y 
+function findIntersection(a: number[], b: number[]) {
+  return a.filter((value) => b.includes(value));
 }
-console.log(countOccurences({ model: "A", s: { model: "B" } }, "model"));
+
+console.log(findIntersection([1, 2, 3], [3, 2, 0]));
+
+
+
+//MIT TASK X
+// function countOccurences(obj: any, b: any) {
+//   let count = 0;
+//   for (const key in obj) {
+//     if (key === "model") count++;
+//     if (typeof obj[key] === "object" && obj[key] !== null) {
+//       count += countOccurences(obj[key], b);
+//     }
+//   }
+//   return count;
+// }
+// console.log(countOccurences({ model: "A", s: { model: "B" } }, "model"));
 
 //MIT TASK W
 // function chunkArray(a: any, b: any) {
