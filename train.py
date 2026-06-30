@@ -1,8 +1,22 @@
-# MIT TASK Y
-def find_intersection(a, b):
-    return [x for x in a if x in b]
+#MIT TASK Z 
+def sum_evens(arr):
+    total = 0
 
-print(find_intersection([1, 2, 3], [3, 2, 0]))
+    for num in arr:
+        if num % 2 == 0:
+            total += num
+
+    return total
+
+print(sum_evens([1, 2, 3]))
+
+
+
+# MIT TASK Y
+# def find_intersection(a, b):
+#     return [x for x in a if x in b]
+
+# print(find_intersection([1, 2, 3], [3, 2, 0]))
 
 
 

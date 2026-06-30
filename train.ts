@@ -1,9 +1,25 @@
-//MIT TASK Y 
-function findIntersection(a: number[], b: number[]) {
-  return a.filter((value) => b.includes(value));
+//MIT TASK Z 
+function sumEvens(arr: number[]) {
+  let sum = 0;
+
+  for (const num of arr) {
+    if (num % 2 === 0) {
+      sum += num;
+    }
+  }
+
+  return sum;
 }
 
-console.log(findIntersection([1, 2, 3], [3, 2, 0]));
+console.log(sumEvens([1, 2, 3, 4]))
+
+
+//MIT TASK Y 
+// function findIntersection(a: number[], b: number[]) {
+//   return a.filter((value) => b.includes(value));
+// }
+
+// console.log(findIntersection([1, 2, 3], [3, 2, 0]));
 
 
 
