@@ -9,6 +9,7 @@ class AuthService {
     this.secretToken = process.env.SECRET_TOKEN as string;
   }
 
+  // JWT HAS 3 parts: HEADER.PAYLOAD.SIGNATURE
   public async createToken(payload: Member) {
     return new Promise((resolve, reject) => {
       const duration = `${AUTH_TIMER}h`;
