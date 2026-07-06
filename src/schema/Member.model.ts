@@ -28,7 +28,7 @@ const memberSchema = new Schema(
     },
     memberPassword: {
       type: String,
-      select: true,
+      select: false,
       required: true,
     },
     memberAddress: {
