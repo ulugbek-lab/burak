@@ -88,10 +88,23 @@ memberController.updateMember = async (req: ExtendedRequest, res: Response) => {
     console.log("updateMember");
     const input: MemberUpdateInput = req.body;
     if (req.file) input.memberImage = req.file.path; //.replace(/\\/, "/") for windows
-    const result = await memberService.updateMember(req.member, input);//argument
+    const result = await memberService.updateMember(req.member, input); //argument
     res.status(HttpCode.OK).json(result);
   } catch (err) {
     console.log("ERROR, updateMember:", err);
+    if (err instanceof Errors) res.status(err.code).json(err);
+    else res.status(Errors.standard.code).json(Errors.standard);
+  }
+};
+
+memberController.getTopUsers = async (req: Request, res: Response) => {
+  try {
+    console.log("getTopUsers");
+
+    const result = await memberService.getTopUsers();//call 
+    res.status(HttpCode.OK).json(result); //argument
+  } catch (err) {
+    console.log("ERROR, getTopUsers:", err);
     if (err instanceof Errors) res.status(err.code).json(err);
     else res.status(Errors.standard.code).json(Errors.standard);
   }
