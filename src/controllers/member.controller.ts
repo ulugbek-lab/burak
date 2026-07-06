@@ -6,6 +6,7 @@ import {
   MemberInput,
   LoginInput,
   ExtendedRequest,
+  MemberUpdateInput,
 } from "../libs/types/member";
 import Errors, { HttpCode, Message } from "../libs/Errors";
 import AuthService from "../models/Auth.service";
@@ -32,7 +33,6 @@ memberController.signup = async (req: Request, res: Response) => {
     console.log("ERROR, signup:", err);
     if (err instanceof Errors) res.status(err.code).json(err);
     else res.status(Errors.standard.code).json(Errors.standard);
-    // res.json({});
   }
 };
 
@@ -78,6 +78,20 @@ memberController.getMemberDetail = async (
     res.status(HttpCode.OK).json(result);
   } catch (err) {
     console.log("ERROR, getMemberDetail:", err);
+    if (err instanceof Errors) res.status(err.code).json(err);
+    else res.status(Errors.standard.code).json(Errors.standard);
+  }
+};
+
+memberController.updateMember = async (req: ExtendedRequest, res: Response) => {
+  try {
+    console.log("updateMember");
+    const input: MemberUpdateInput = req.body;
+    if (req.file) input.memberImage = req.file.path; //.replace(/\\/, "/") for windows
+    const result = await memberService.updateMember(req.member, input);//argument
+    res.status(HttpCode.OK).json(result);
+  } catch (err) {
+    console.log("ERROR, updateMember:", err);
     if (err instanceof Errors) res.status(err.code).json(err);
     else res.status(Errors.standard.code).json(Errors.standard);
   }
