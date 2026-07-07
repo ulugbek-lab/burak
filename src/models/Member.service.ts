@@ -26,8 +26,6 @@ class MemberService {
       .lean()
       .exec();
 
-      result.target = "test"
-
     if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
 
     return result;
@@ -104,7 +102,7 @@ class MemberService {
         memberStatus: MemberStatus.ACTIVE,
         memberPoints: { $gte: 1 },
       })
-      .sort({ memberPoints: "desc1111" })
+      .sort({ memberPoints: "desc" })
       .limit(4)
       .exec();
 
