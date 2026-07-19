@@ -41,7 +41,7 @@ class OrderService {
         memberId: memberId,
       });
 
-      const orderId = newOrder._id;
+      const orderId = newOrder._id; //get one ID for all the items
       console.log("orderId", newOrder._id);
 
       //TODO create orderitems
@@ -58,6 +58,7 @@ class OrderService {
     input: OrderitemInput[],
   ): Promise<void> {
     const promisedList = input.map(async (item: OrderitemInput) => {
+      //creates many async inserts
       item.orderId = orderId;
       item.productId = shapeIntoMongooseObjectId(item.productId);
       await this.orderItemModel.create(item);
@@ -65,7 +66,7 @@ class OrderService {
     });
 
     console.log(promisedList);
-    const orderItemsState = await Promise.all(promisedList);
+    const orderItemsState = await Promise.all(promisedList); //array of promises / wait untill all promises finish
     console.log(orderItemsState);
   }
 
@@ -81,6 +82,7 @@ class OrderService {
         { $sort: { updatedAt: -1 } },
         { $skip: (inquiry.page - 1) * inquiry.limit },
         { $limit: inquiry.limit },
+        //order
         {
           $lookup: {
             from: "orderItems",
@@ -88,6 +90,7 @@ class OrderService {
             foreignField: "orderId",
             as: "orderItems",
           },
+          // order + orderItem 
         },
         {
           $lookup: {

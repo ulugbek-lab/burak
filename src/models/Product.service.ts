@@ -29,7 +29,7 @@ class ProductService {
     if (inquiry.productCollection)
       match.productCollection = inquiry.productCollection;
     if (inquiry.search) {
-      match.productName = { $regex: new RegExp(inquiry.search, "i") };
+      match.productName = { $regex: new RegExp(inquiry.search, "i") }; //case-insensitive
     }
     const sort: T =
       inquiry.order === "productPrice"
@@ -38,6 +38,7 @@ class ProductService {
 
     const result = await this.productModel
       .aggregate([
+        //Pipeline needs for grouping and later adding lookup
         { $match: match },
         { $sort: sort },
         { $skip: (inquiry.page * 1 - 1) * inquiry.limit },
@@ -64,8 +65,7 @@ class ProductService {
     //TODO: If auth users => first => view log creation
 
     if (memberId) {
-      //check view log existance
-
+      // 1. check view log existance
       const input: ViewInput = {
         memberId: memberId,
         viewRefId: productId,
@@ -74,15 +74,13 @@ class ProductService {
 
       const existView = await this.viewService.checkViewExistance(input);
 
-      // insert view
-
+      // 2. insert view to db
       if (!existView) {
         console.log("PLANING TO INSERT NEW VIEW ");
 
         await this.viewService.insertMemberView(input);
       }
-      // increase counts
-
+      // 3. increase counts
       const result = await this.productModel
         .findByIdAndUpdate(
           productId,
